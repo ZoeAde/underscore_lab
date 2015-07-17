@@ -20,6 +20,7 @@ first : function (array) {
 last : function (array) {
   return array.slice(-1)[0]
 },
+
 //DONE - Question 5: max - returns the maximum value in an array
 max : function (array) {
   var largest=0
@@ -30,9 +31,9 @@ max : function (array) {
   return largest;
   }
 },
-//Question 6: min - returns the minimum value in an array
+//DONE - Question 6: min - returns the minimum value in an array
 min : function (array) {
-  var minimum=
+  var minimum = Infinity
   for (var i = 0; i < array.length; i++) {
     if (array[i] < minimum) {
       minimum = array[i];
@@ -40,56 +41,83 @@ min : function (array) {
   return minimum;
   }
 },
-//HOLD OFF - Question 7: shuffle - Returns a shuffled copy of the list, using a version of the Fisher-Yates shuffle. Don't worry about implementing that exact shuffle alogrithm. Start by creating your own simple shuffle.
+//DONE- Question 7: shuffle - Returns a shuffled copy of the list, using a version of the Fisher-Yates shuffle. Don't worry about implementing that exact shuffle alogrithm. Start by creating your own simple shuffle.
 shuffle : function (array) {
+  var currentIndex = array.length, tempIndex, randomIndex;
+  while (0 != currentIndex) {
+    randomIndex = Math.floor(Math.random() * currentIndex);
+    currentIndex -= 1
+    tempIndex = array[currentIndex];
+    array[currentIndex] = array[randomIndex];
+    array[randomIndex] = tempIndex;
+  }
+    return array;
+  },
 
-},
-
-//Question 8: Produce a random sample from the list. Pass a number to return n random elements from the list. Otherwise a single random item will be returned.
-sample : function (number) {
-  var n = []
-for (var i = 0; i < array.length; i++) {
-  var randoms = array[Math.floor(Math.random() * array.length)];
+/* DONE - Question 8: Produce a random sample from the list.
+Pass a number to return n random elements from the list.
+Otherwise a single random item will be returned.*/
+var sample = function (array) {
+  var els = [];
+  var randomElement = 0;
+  var sampleSize = array[Math.floor(Math.random() * array.length)];
+for (var i = 0; i < sampleSize; i++) {
+    randomElement = array[Math.floor(Math.random() * sampleSize)];
+    els.push(randomElement);
 }
-return n
+return els;
 },
 
-//Question 9: difference - returns the values from array that are not present in the other array.
-//what am I doing wrong???
-
-difference : function (array1, array2) {
-var arraydiff=[]
+//Question 9: difference - returns the values from array
+//that are not present in the other array.
+var difference = function (array1, array2) {
+//create tempArray
+  tempArray = []
+//splice array1[0] to tempArray
 for (var i = 0; i < array1.length; i++) {
-  if (array1[i] != array2[i])
-  arraydiff.push(array1[i])
+  tempArray.splice(array1[i], 1);
+    for (var j = 0; j < array2.length; j++) {
+      if (tempArray[i] === array2[j]) {
+        tempArray.splice(i, 1);
+        array2.splice(j, 1);
+      }
+      else if (tempArray[i] != array2[j]) {
+        tempArray.push(array2[j]);
+    }
+  }
 }
-for (var i = 0; i < array2.length; i++) {
-  if (array2[i] != array1[i])
-  arraydiff.push(array2[i])
-}
-return arraydiff
+console.log(tempArray)
+return tempArray
 };
+-------------
+difference : function (array1, array2) {
+  var checked=[];
+  var different=[];
+  for (var i = 0; i < array1.length; i++) {
+    if (array2.indexOf[i] === -1) {
+      checked.push(array2[i]);
+    }
+    else {
+      different.push(array2[i])}
+    }
+  }
+  return different;
+  };
 
 
-
-//Question 10: indexOf - Returns the index at which value can be found in the array, or -1 if value is not present in the array.
-//best way to access index and number???
+//DONE - Question 10: indexOf - Returns the index at which value can be found in the array, or -1 if value is not present in the array.
 indexOfExample : function (number) {
-  if (indexOf(number) === -1) {
+  if (array.indexOf(number) === -1) {
     return -1
   }
   else {
-    return indexOf(number)
+    return array.indexOf(number)
   }
-};
-
-//Question 11: pluck - extracts a list of property values and returns them in an array.
-pluck : function (array) {
-
 },
 
-
-
-
-
-};
+//DONE - Question 11: pluck - extracts a list of property values and returns them in an array.
+    value = [];
+    for (var i = 0; i < array1.length; i++) {
+      value.push(array1[i].name);
+    }
+    return value;
