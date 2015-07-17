@@ -70,39 +70,6 @@ return els;
 
 //Question 9: difference - returns the values from array
 //that are not present in the other array.
-var difference = function (array1, array2) {
-//create tempArray
-  tempArray = []
-//splice array1[0] to tempArray
-for (var i = 0; i < array1.length; i++) {
-  tempArray.splice(array1[i], 1);
-    for (var j = 0; j < array2.length; j++) {
-      if (tempArray[i] === array2[j]) {
-        tempArray.splice(i, 1);
-        array2.splice(j, 1);
-      }
-      else if (tempArray[i] != array2[j]) {
-        tempArray.push(array2[j]);
-    }
-  }
-}
-console.log(tempArray)
-return tempArray
-};
--------------
-difference : function (array1, array2) {
-  var checked=[];
-  var different=[];
-  for (var i = 0; i < array1.length; i++) {
-    if (array2.indexOf[i] === -1) {
-      checked.push(array2[i]);
-    }
-    else {
-      different.push(array2[i])}
-    }
-  }
-  return different;
-  };
 
 
 //DONE - Question 10: indexOf - Returns the index at which value can be found in the array, or -1 if value is not present in the array.
