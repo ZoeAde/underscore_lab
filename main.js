@@ -70,7 +70,15 @@ return els;
 
 //Question 9: difference - returns the values from array
 //that are not present in the other array.
-
+difference : function (array1, array2) {
+  var different = [];
+  for (var i = 0; i < array1.length; i++) {
+    if (_.contains(array2, array1[i]) != true) {
+      different.push(array1[i]);
+    }
+  }
+  return different;
+},
 
 //DONE - Question 10: indexOf - Returns the index at which value can be found in the array, or -1 if value is not present in the array.
 indexOfExample : function (number) {
@@ -88,3 +96,41 @@ indexOfExample : function (number) {
       value.push(array1[i].name);
     }
     return value;
+
+
+// PART 2 UNDERSCORE LAB:
+//each - iterates over an array and calls a given function with each element
+each : function (array1, function1) {
+  newArray = []
+  for (i in array1) {
+    newArray.push(function1(array1[i]));
+  }
+};
+
+//compact - returns a new array with all provided undefined values removed
+compact : function (array1) {
+    newArray = []
+    for (i in array1) {
+      if (i != undefined) {
+        newArray.push(array1[i]);
+      }
+    }
+};
+
+//map - returns a new array of values produced by running each element of an array through a given function
+map : function (array1, function1) {
+  newArray = []
+  for (i in array1) {
+    newArray.push(function1(array1[i]));
+  }
+};
+
+//filter - Looks through each value in the list, returning an array of all the values that pass a truth test
+filter : function (array1, function1) {
+  newArray = []
+  for (i in array1) {
+    if (true) {
+      newArray.push(array1[i])
+    }
+  }
+};
