@@ -8,7 +8,7 @@ average : function (array) {
 contains : function (number) {
   for (var i = 0; i < array.length; i++) {
     if (array.indexOf(i) === number) {
-      console.log(true)
+      console.log(true);
     }
   }
 },
@@ -18,12 +18,12 @@ first : function (array) {
 },
 //DONE - Question 4: last - returns the last element in an array
 last : function (array) {
-  return array.slice(-1)[0]
+  return array.slice(-1)[0];
 },
 
 //DONE - Question 5: max - returns the maximum value in an array
 max : function (array) {
-  var largest=0
+  var largest=0;
   for (var i = 0; i < array.length; i++) {
     if (array[i] > largest) {
       largest = array[i];
@@ -33,7 +33,7 @@ max : function (array) {
 },
 //DONE - Question 6: min - returns the minimum value in an array
 min : function (array) {
-  var minimum = Infinity
+  var minimum = Infinity;
   for (var i = 0; i < array.length; i++) {
     if (array[i] < minimum) {
       minimum = array[i];
@@ -44,9 +44,9 @@ min : function (array) {
 //DONE- Question 7: shuffle - Returns a shuffled copy of the list, using a version of the Fisher-Yates shuffle. Don't worry about implementing that exact shuffle alogrithm. Start by creating your own simple shuffle.
 shuffle : function (array) {
   var currentIndex = array.length, tempIndex, randomIndex;
-  while (0 != currentIndex) {
+  while (0 !== currentIndex) {
     randomIndex = Math.floor(Math.random() * currentIndex);
-    currentIndex -= 1
+    currentIndex -= 1;
     tempIndex = array[currentIndex];
     array[currentIndex] = array[randomIndex];
     array[randomIndex] = tempIndex;
@@ -66,29 +66,29 @@ for (var i = 0; i < sampleSize; i++) {
     els.push(randomElement);
 }
 return els;
-},
+}
 
 //Question 9: difference - returns the values from array
 //that are not present in the other array.
 difference : function (array1, array2) {
   var different = [];
   for (var i = 0; i < array1.length; i++) {
-    if (_.contains(array2, array1[i]) != true) {
+    if (_.contains(array2, array1[i]) !== true) {
       different.push(array1[i]);
     }
   }
   return different;
-},
+}
 
 //DONE - Question 10: indexOf - Returns the index at which value can be found in the array, or -1 if value is not present in the array.
 indexOfExample : function (number) {
   if (array.indexOf(number) === -1) {
-    return -1
+    return -1;
   }
   else {
-    return array.indexOf(number)
+    return array.indexOf(number);
   }
-},
+}
 
 //DONE - Question 11: pluck - extracts a list of property values and returns them in an array.
     value = [];
@@ -105,32 +105,32 @@ each : function (array1, function1) {
   for (i in array1) {
     newArray.push(function1(array1[i]));
   }
-};
+}
 
 //compact - returns a new array with all provided undefined values removed
 compact : function (array1) {
     newArray = []
     for (i in array1) {
-      if (i != undefined) {
+      if (i !== undefined) {
         newArray.push(array1[i]);
       }
     }
-};
+}
 
 //map - returns a new array of values produced by running each element of an array through a given function
 map : function (array1, function1) {
-  newArray = []
+  newArray = [];
   for (i in array1) {
     newArray.push(function1(array1[i]));
   }
-};
+}
 
 //filter - Looks through each value in the list, returning an array of all the values that pass a truth test
 filter : function (array1, function1) {
-  newArray = []
+  newArray = [];
   for (i in array1) {
     if (true) {
-      newArray.push(array1[i])
+      newArray.push(array1[i]);
     }
   }
-};
+}
